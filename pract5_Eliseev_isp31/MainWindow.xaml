@@ -1,0 +1,90 @@
+﻿<Window
+    x:Class="pract7_Eliseev_isp31.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:pract7_Eliseev_isp31"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d" ResizeMode="CanResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Menu
+            Grid.ColumnSpan="3"
+            Height="20"
+            VerticalAlignment="Top">
+
+            <MenuItem
+                FontSize="9"
+                Foreground="Black"
+                Header="Файл">
+
+                <MenuItem
+                    Click="Exit"
+                    Foreground="Black"
+                    Header="Выход" />
+
+                <MenuItem
+                    Click="About_Program"
+                    Foreground="Black"
+                    Header="О программе"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                    <Label
+                Content="Введите первое &#xD;&#xA;число"/>
+                    <TextBox
+                x:Name="firstNumber"/>
+
+                    <Label
+                Content="Введите второе &#xD;&#xA;число"/>
+
+                    <TextBox 
+                x:Name="secondNumber"/>
+
+                <Label
+                Content="Введите третье &#xD;&#xA;число"/>
+
+                    <TextBox
+                x:Name="thirdNumber"/>
+            <Button Margin="5"
+                Content="добавить" Click="AddTriad"/>
+
+                <Button Margin="5"
+            Content="Сравнить" Click="Equal"/>
+                
+                <Button Margin="5"
+            Content="Cравнить.2" Click="EqualPart2"/>
+                
+                
+                <Button
+                    Content="Cравнить время" Click="EqualOfTime"/>
+
+
+
+            </StackPanel>
+            <ListBox Grid.Column="1"
+                     Margin="20,20,20,80"
+                 x:Name="ListBoxOfTriads"
+                 SelectionMode="Multiple"/>
+
+        </Grid>
+
+
+
+    </Grid>
+</Window>
