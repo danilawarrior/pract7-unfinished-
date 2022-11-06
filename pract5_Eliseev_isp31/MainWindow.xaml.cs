@@ -47,7 +47,7 @@ namespace pract7_Eliseev_isp31
                 Triad first = selectedTriad[0] as Triad;
                 Triad second = selectedTriad[1] as Triad;
 
-                if (first.Equality(second)) 
+                if (first.Equality(second))
                 {
                     MessageBox.Show("Equal");
                 }
@@ -101,6 +101,19 @@ namespace pract7_Eliseev_isp31
             }
         }
 
+        private void AddTime(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Time time = new Time(Convert.ToInt32(firstNumber.Text), Convert.ToInt32(secondNumber.Text), Convert.ToInt32(thirdNumber.Text));
+                ListBoxOfTriads.Items.Add(time);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void EqualOfTime(object sender, RoutedEventArgs e)
         {
             var selectedTimeMoment = ListBoxOfTriads.SelectedItems;
@@ -112,10 +125,25 @@ namespace pract7_Eliseev_isp31
 
                 if (firstMoment.Comparsion(secondMoment))
                 {
-                    MessageBox.Show("time moments is equal");                 
+                    MessageBox.Show("time moments is equal");
+                }
+                else { MessageBox.Show("time moments is not equal"); }
+            }
+
+            if (selectedTimeMoment.Count == 3)
+            {
+                Time firstMoment = selectedTimeMoment[0] as Time;
+                Time secondMoment = selectedTimeMoment[1] as Time;
+                Time thirdMoment = selectedTimeMoment[2] as Time;
+
+
+                if (firstMoment.ComparisonOfThree(secondMoment, thirdMoment))
+                {
+                    MessageBox.Show("time moments is equal");
                 }
                 else { MessageBox.Show("time moments is not equal"); }
             }
         }
+
     }
 }

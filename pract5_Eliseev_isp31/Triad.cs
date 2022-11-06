@@ -9,20 +9,19 @@ namespace pract7_Eliseev_isp31
     public class Triad
     {
 
-         int _first;
-         int _second;
-         int _third;
+          int _first;
+          int _second;
+          int _third;
         
-
 
         public Triad(int first, int second, int third)
         {
-            Hour = first;
+            First = first;
             Second = second;
             Third = third;
         }
         
-        public int Hour
+        public int First
         {
             get => _first;
             set
@@ -63,19 +62,19 @@ namespace pract7_Eliseev_isp31
 
         public bool Equality(Triad value)
         {
-            return Hour == value.Hour && Second == value.Second && Third == value.Third;
+            return First == value.First && Second == value.Second && Third == value.Third;
         }
 
 
         public bool Equality(Triad triada1, Triad triada2)
         {
-            return Equality(triada1) && Hour == triada2.Hour && Second == triada2.Second && Third == triada1.Third;
+            return Equality(triada1) && First == triada2.First && Second == triada2.Second && Third == triada1.Third;
         }
 
 
         public static bool operator ==(Triad triada1, Triad triada2)
         {
-            if (triada1.Hour == triada2.Hour && triada1.Second == triada2.Second && triada1.Third == triada2.Third)
+            if (triada1.First == triada2.First && triada1.Second == triada2.Second && triada1.Third == triada2.Third)
             {
                 return true;
             }
@@ -84,13 +83,13 @@ namespace pract7_Eliseev_isp31
 
         public static bool operator !=(Triad triada1, Triad triada2)
         {
-            return triada1.Hour != triada2.Hour && triada1.Second != triada2.Second && triada1.Third != triada2.Third;
+            return triada1.First != triada2.First && triada1.Second != triada2.Second && triada1.Third != triada2.Third;
         }
 
 
         public override string ToString()
         {
-            return $"{Hour}, {Second}, {Third}";
+            return $"{First}, {Second}, {Third}";
         }
 
     }

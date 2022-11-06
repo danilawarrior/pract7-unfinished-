@@ -19,8 +19,8 @@ namespace pract7_Eliseev_isp31
             Second = third;
         }
 
-
         public int Hour { get => _hour; set => _hour = value; }
+
         public int Minute
         {
             get => _minute; set
@@ -70,5 +70,9 @@ namespace pract7_Eliseev_isp31
         }
 
 
+        public override string ToString()
+        {
+            return $"{Hour}, {Minute}, {Second}";
+        }
     }
 }
